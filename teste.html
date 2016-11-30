@@ -33,14 +33,15 @@
 					</div>
 				</div>
 				<div class="container" id="bntLimpaTarefas">
-					<button type="button" class="btn btn-danger btn-block btn-md" onclick="limparAtividades()">Limpar Atividades</button>
+					<button type="button" id="buttomLimparAtividades" class="btn btn-danger btn-block btn-md" onclick="limparAtividades()"><span id="textButtonLimparAtividades">Limpar</span></button>
 				</div>	
 				<p>
 					<!-- espaco necessario -->
 				</p>
+				<h2>O Seu Progresso é:</h2>
 				<div class="progress">
 					<div id="barraDeProgresso" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-					aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+					aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
 					0%
 					</div>
 				</div>
@@ -50,11 +51,10 @@
 				
 				<ul class="list-group" id="listaDeTarefas"> 
 				</ul>
-				
-				<footer class="footer">
-					Copyright © Davi Laerte 2016. All right reserved.
-				</footer>
 			</div>
+			<footer class="footer">
+				Copyright © Davi Laerte 2016. All right reserved.
+			</footer>
 		</div>	
 	</body>
 </html>

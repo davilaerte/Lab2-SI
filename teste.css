@@ -1,5 +1,5 @@
 
-html,body {
+body {
 	background-color: #2F4F4F;
 	height: 100%;
 }
@@ -9,9 +9,11 @@ html,body {
 }
 
 #principal {
-	position:relative;
 	background-color: #778899;
-	min-height:100%;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 0 1px 1px 1px;
+	border-radius: 5px;
 }
 
 .input-group {
@@ -19,7 +21,7 @@ html,body {
 }
 
 .progress {
-	margin-top: 50px;
+	margin-top: 10px;
 	height: 25px;
 }
 
@@ -31,6 +33,7 @@ html,body {
 .list-group-item {
 	margin-top: 2px;
 	padding: 12px 8px 12px 40px;
+	overflow: hidden;
 }
 
 .list-group-item.active {
@@ -52,11 +55,25 @@ html,body {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+	background-color: grey;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 1px;
+	border-radius: 5px;
 }
 
 #bntLimpaTarefas {
 	margin-top: 10px;
 }
+
+#buttomLimparAtividades {
+	display: inline-block;
+	margin: 4px 2px;
+	overflow: hidden;
+}
+
+
