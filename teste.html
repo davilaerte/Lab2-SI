@@ -7,7 +7,7 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="teste.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <scrip 	t src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <script src="teste.js"></script>
 	</head>
 	<body>
@@ -25,9 +25,9 @@
 			</nav>
 			<div class="container">
 				<div class="input-group">
-					<input id="novaAtividade" type="text" class="form-control" placeholder="Digite a atividade">
+					<input id="novaAtividade" type="text" class="form-control" placeholder="Digite a atividade" oninput="blockButton()">
 					<div class="input-group-btn">
-						<button class="btn btn-default" type="submit" onclick="addAtividade()">
+						<button id="buttonAddAtividade" class="btn btn-default" type="submit" onclick="addAtividade()">
 							<i class="glyphicon glyphicon-plus"></i>
 						</button>
 					</div>
@@ -49,13 +49,20 @@
 					<!-- espaco necessario -->
 				</p>
 				
-				<ul class="list-group" id="listaDeTarefas"> 
+				<ul class="list-group" id="listaDeTarefas">
 				</ul>
 			</div>
 			<footer class="footer">
 				Copyright © Davi Laerte 2016. All right reserved.
 			</footer>
-		</div>	
+		</div>
+		
+		<!-- inicia atividades default-->
+		<script>
+			criarAtividadeComNome("Varrer a Casa");
+			criarAtividadeComNome("Estudar para a prova");
+			criarAtividadeComNome("Arrumar o Quarto");
+		</script>
 	</body>
 </html>
 	

@@ -1,59 +1,47 @@
 //fecha buttons
 
 
+
 function addAtividade() {
-		creatAtividade();
-		changeProgressBar();
-		//addEventCloseButton();
+		
+		if(blockButton()) {
+			creatAtividade();
+			changeProgressBar();
+		}
 }
 
-function addEventCloseButton() {
-	var listaElementos = document.getElementsByClassName("close");
-	var i;
-	
-	for (i = 0; i < listaElementos.length; i++) {
-					
-	listaElementos[i].addEventListener("click", function () {
-				var parent = this.parentNode;
-				
-				parent.parentNode.removeChild(parent);
-				});
-		}
-	}
-			
-			
-function creatAtividade() {
+function criarAtividadeComNome(text) {
 	var novaAtividade = document.createElement("li");
-	var entrada = document.getElementById("novaAtividade");
-	var textoAtividade = document.createTextNode(entrada.value);
+	var textoAtividade = document.createTextNode(text);
 	var minhaLista = document.getElementById("listaDeTarefas");
 	var buttonClose = creatButtonAtividade();	
 		
 	novaAtividade.className = "list-group-item";
 	novaAtividade.appendChild(textoAtividade);
 	
-	entrada.value = "";
-	
+		
 	novaAtividade.appendChild(buttonClose);
 	minhaLista.appendChild(novaAtividade);
 	
 	//adiciona evento de fechar atividade
 	buttonClose.addEventListener("click", function () {
-			minhaLista.removeChild(novaAtividade);
-			changeProgressBar();
+			EventFecharAtividade(minhaLista, novaAtividade);
 		});
 	
 	// adiciona evento para marcar atividade
 	novaAtividade.addEventListener("click", function () {
-			if(novaAtividade.className === "list-group-item") {
-				novaAtividade.className = "list-group-item active";
-			} else {
-				novaAtividade.className = "list-group-item";
-			}
-			
-			changeProgressBar();	
+			EventMarcarAtividade(novaAtividade);	
 		});
 	
+	
+}	
+
+			
+			
+function creatAtividade() {
+	var entrada = document.getElementById("novaAtividade");
+	criarAtividadeComNome(entrada.value);	
+	entrada.value = "";
 }
 
 function creatButtonAtividade()	{
@@ -95,6 +83,39 @@ function limparAtividades() {
 		elemento.removeChild(elemento.firstChild);
 	}
 	
+	changeProgressBar();
+}
+
+function blockButton() {
+	var entrada = document.getElementById("novaAtividade");
+	var buttonAddAtividade = document.getElementById("buttonAddAtividade"); 
+	
+	if(entrada.value === ''){
+		buttonAddAtividade.className = "btn btn-default disabled";
+		
+		return false;
+	} else {
+		buttonAddAtividade.className = "btn btn-default";
+		
+		return true;
+	}	
+}
+
+function EventMarcarAtividade (novaAtividade) {
+	
+	if(novaAtividade.className === "list-group-item") {
+	
+		novaAtividade.className = "list-group-item active";
+	} else {
+	
+		novaAtividade.className = "list-group-item";
+	}
+			
+	changeProgressBar();	
+}
+
+function EventFecharAtividade(minhaLista, novaAtividade) {
+	minhaLista.removeChild(novaAtividade);
 	changeProgressBar();
 }
 
