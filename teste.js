@@ -64,6 +64,7 @@ function changeProgressBar() {
 	
 	barProgress.style = "width:"+progresso+"%";
 	barProgress.innerHTML = progresso+"%";
+	changeColorProgressBar(barProgress, progresso);
 }
 
 function getNumberAtividades() {
@@ -89,9 +90,11 @@ function limparAtividades() {
 function blockButton() {
 	var entrada = document.getElementById("novaAtividade");
 	var buttonAddAtividade = document.getElementById("buttonAddAtividade"); 
+	console.log(entrada.value.length);
 	
-	if(entrada.value === ''){
+	if(entrada.value === '' || entrada.value.length > 50){
 		buttonAddAtividade.className = "btn btn-default disabled";
+		console.log("passou");
 		
 		return false;
 	} else {
@@ -119,8 +122,17 @@ function EventFecharAtividade(minhaLista, novaAtividade) {
 	changeProgressBar();
 }
 
-
-
+function changeColorProgressBar(barProgress, progresso) {
+	if(progresso >= 0 && progresso <= 25){
+		barProgress.className = "progress-bar progress-bar-danger progress-bar-striped active";
+	} else if (progresso > 25 && progresso <= 50) {
+		barProgress.className = "progress-bar progress-bar-warning progress-bar-striped active";
+	} else if (progresso > 50 && progresso <= 75) {
+		barProgress.className = "progress-bar progress-bar-info progress-bar-striped active";
+	} else {
+		barProgress.className = "progress-bar progress-bar-success progress-bar-striped active";
+	}
+}
 
 
 
