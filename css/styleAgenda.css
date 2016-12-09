@@ -23,13 +23,6 @@ a {
 	width: 65%;
 }
 
-#principal {
-	background-color: #778899;
-	border-style: solid;
-	border-color: #fff;
-	border-width: 0 1px 1px 1px;
-	border-radius: 5px;
-}
 
 .input-group {
 	margin-top: 20px;
@@ -88,6 +81,14 @@ a {
 	border-style: solid;
 	border-color: #fff;
 	border-width: 1px;
+	border-radius: 5px;
+}
+
+#principal {
+	background-color: #778899;
+	border-style: solid;
+	border-color: #fff;
+	border-width: 0 1px 1px 1px;
 	border-radius: 5px;
 }
 
