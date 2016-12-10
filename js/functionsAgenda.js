@@ -104,7 +104,7 @@ function checkAddAtividade() {
 	var entrada = document.getElementById("novaAtividade");
 	var buttonAddAtividade = document.getElementById("buttonAddAtividade"); 
 		
-	if(entrada.value === '' || entrada.value.length > 50){
+	if(entrada.value.trim() === '' || entrada.value.length > 30){
 		buttonAddAtividade.className = "btn btn-default disabled";
 				
 		return false;
